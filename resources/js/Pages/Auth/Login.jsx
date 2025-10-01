@@ -23,7 +23,7 @@ export default function Login() {
                     href="/"
                     className="px-4 py-2 bg-green-600 text-white font-bold rounded hover:bg-green-700 transition"
                 >
-                    ACIPTUR
+                    Regresar
                 </Link>
             </div>
 
