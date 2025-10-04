@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MembresiaController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -30,6 +31,13 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
 });
+
+Route::get('/membresias', [MembresiaController::class, 'index'])->name('membresias.index');
+
+Route::get('/membresia/estudiante', [MembresiaController::class, 'estudiante'])->name('membresia.estudiante');
+Route::get('/membresia/academico', [MembresiaController::class, 'academico'])->name('membresia.academico');
+Route::get('/membresia/profesional', [MembresiaController::class, 'profesional'])->name('membresia.profesional');
+
 
 
 require __DIR__.'/auth.php';
